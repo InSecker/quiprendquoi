@@ -1,0 +1,18 @@
+include ./partials/header.pug
+h1 Qui prend quoi ?
+h2 #{party.name} aura lieu le #{party.date}
+div
+  label(for="url") Partagez l'événement
+  input(id="url" value=`${url}`)
+include ./partials/item_form.pug
+ul
+  each value in party.items
+    li
+      h5 Quoi? #{value.name}
+      h5 Qui? #{value.user}
+      form(method="delete" action="/item/" + party._id + "/" + value._id)
+        button(type="submit") Supprimer
+h3 Créé par #{party.author}
+
+//- <input type="submit" value="Go to my link location" 
+//-     onclick="window.location='/my/link/location';" />    
