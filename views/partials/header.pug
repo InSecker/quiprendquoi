@@ -5,5 +5,18 @@ html(lang="fr")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name="Description" content="Qui Prend Quoi vous permet de planifier vos soirées.")
     link(rel="stylesheet" href="/style.css")
+    link(rel="manifest" href="/manifest.json")
+    script.
+      if (navigator.serviceWorker) {
+        navigator.serviceWorker.register("/sw.js")
+          .then(() => console.log('Service worker is registered'))
+          .catch(err => console.warn(err));
+      } else {
+        console.log('Service Worker not compatible with your navigator.');
+      }
+    script(src="/script.js" defer)
   body
+    header
+      h1 Qui prend quoi ?

@@ -1,10 +1,9 @@
-h4 Ajouter une ressource
-form(method="post" action="/item/" + party._id)
-  ul
-    li 
+div.addItem
+  h3 Ajouter une ressource
+  form(method="post" action="/item/" + party._id onsubmit="return webSocket(\"" + party._id + "\")").form.items
+    div.form__fields
       label(for="name") Ce que je vais apporter
-      input(name="name" id="name" required minlength="3" placeholder="Nouvel an" type="text")
-    li
+      input(name="name" id="name" required minlength="3" placeholder="Champagne" type="text")
       label(for="author") Votre Prénom
       input(name="user" id="author" required minlength="3" placeholder="Perceval" type)
-  button(type="submit") Créer
+      button(type="submit") Créer

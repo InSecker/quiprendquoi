@@ -1,0 +1,7 @@
+h4 Quoi?
+p #{value.name}
+h4 Qui?
+p #{value.user}
+div.deleteContainer
+  form(method="delete" action="/item/" + party._id + "/" + value._id id=value._id)
+    button(type="submit") Supprimer

@@ -1,11 +1,11 @@
 @import './configs/media.scss';
-@import './blocs/newParty.scss';
+@import './fonts.scss';
 @import './reset.scss';
 
-form {
-  border: 1px solid blue;
+@import './variables.scss';
+@import './generics.scss';
 
-  div {
-    border: 1px solid red;
-  }
-}
+@import './blocs/share.scss';
+@import './blocs/newParty.scss';
+@import './blocs/newItem.scss';
+@import './blocs/items.scss';

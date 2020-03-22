@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently --kill-others -n \"sass,server\" -c \"magenta,cyan\" \"npm run sass\" \"nodemon app.js\"",
-    "sass": "node-sass styles/style.scss public/style.css -w --output-style compressed"
+    "dev": "concurrently --kill-others -n \"sass,server,js,sw\" -c \"magenta,cyan,red,yellow\" \"npm run sass\" \"nodemon app.js\" \"npm run watchify\" \"npm run sw\"",
+    "sass": "node-sass styles/style.scss public/style.css -w --output-style compressed",
+    "watchify": "watchify scripts/*.js -o public/script.js -t [ babelify --presets [ @babel/preset-env babel-preset-minify ] ]",
+    "sw": "watchify sw.js -o public/sw.js -t [ babelify --presets [ babel-preset-minify ] ]"
   },
   "keywords": [],
   "author": "",
@@ -13,12 +15,20 @@
   "dependencies": {
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "pug": "^2.0.4"
+    "fs": "0.0.1-security",
+    "pug": "^2.0.4",
+    "socket.io": "^2.3.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "babel-preset-minify": "^0.5.1",
+    "babelify": "^10.0.0",
     "concurrently": "^5.1.0",
-    "node-sass": "^4.13.1"
+    "node-sass": "^4.13.1",
+    "watchify": "^3.11.1"
   }
 }

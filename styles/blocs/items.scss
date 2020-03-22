@@ -1,0 +1,33 @@
+@supports (display: flex) {
+  .itemsContainer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .item {
+    flex-grow: 1;
+  }
+}
+
+// IF FLEXBOX IS NOT SUPPORTED
+.item {
+  display: inline-block;
+}
+
+.item {
+  max-width: 300px;
+  margin: 1em;
+  padding: 1em;
+  background: $red;
+  color: white;
+  button {
+    background: white;
+    color: $red;
+  }
+  p {
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 1em;
+    text-align: center;
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Qui Prend Quoi?",
+  "short_name": "QPQ?",
+  "theme_color": "#ce2c4d",
+  "background_color": "white",
+  "display": "minimal-ui",
+  "scope": "/",
+  "start_url": "/"
+}
